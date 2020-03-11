@@ -1,44 +1,27 @@
-import React, { useEffect, useRef, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * Generated with the TypeScript template
+ * https://github.com/react-native-community/react-native-template-typescript
+ *
+ * @format
+ */
+
+import React, { useEffect } from "react";
+import Card from "./components/Card";
+import { ThemeProvider } from "./theme/ThemeProvider";
 import BootSplash from "react-native-bootsplash";
 
-let App = () => {
+const App = () => {
   useEffect(() => {
-    BootSplash.hide({ duration: 2000 });
+    BootSplash.hide({ duration: 250 });
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Main Screen</Text>
-    </View>
+    <ThemeProvider>
+      <Card />
+    </ThemeProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: "700",
-    margin: 20,
-    lineHeight: 30,
-    color: "#333",
-    textAlign: "center",
-  },
-  bootsplash: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
-  },
-  logo: {
-    height: 100,
-    width: 100,
-  },
-});
-
 export default App;
